@@ -13,7 +13,7 @@ public class Hospital {
             System.out.println("PATIENTS: " 
                                + "\n Patient ID: " + Patient.get(i).getId()
                                + "\n Patient Name: " + Patient.get(i).getName()
-                               + "\n Patient Surename: " + Patient.get(i).getSurename()
+                               + "\n Patient Surename: " + Patient.get(i).getSurname()
                                + "\n Patient Age: " + Patient.get(i).getAge()
             );
         }
@@ -81,9 +81,10 @@ public class Hospital {
         Person p1;
         p1 = new Person("Name", "Surename", (short)1, 1);
         //p1 = new Doctor("Raivo", "Bambis", (short)1, 2, (short)3, "m");
-        Person pat1 = new Patient("Raivo", "Bambis", (short)1, 1, list);
+        Person pat1 = new Patient("Raivo", "Bambis", (short)1, 1);
         
-        System.out.println(p1.getName() + " " + p1.getSurename() + " " + p1.getAge() + " " + p1.getId() );
+        System.out.println(p1.getName() + " " + p1.getSurname() + " " + p1.getAge() + " " + p1.getId() );
+        System.out.println(pat1.getName() + " " + pat1.getSurname() + " " + pat1.getAge() + " " + pat1.getId() );
     }
     
 }

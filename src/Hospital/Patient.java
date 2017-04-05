@@ -6,13 +6,14 @@ public class Patient extends Person{
     
     ArrayList<Appointment> Appointments;
     
+    //added default constructor
     public Patient(String name, String surname, short age, int id){
         super(name, surname, age, id);
         Appointments = new ArrayList<Appointment>();
     }
     
-    public Patient(String name, String surename, short age, int id, ArrayList<Appointment> list) {
-        super(name, surename, age, id);
+    public Patient(String name, String surname, short age, int id, ArrayList<Appointment> list) {
+        super(name, surname, age, id);
         this.Appointments = list;
     }
     

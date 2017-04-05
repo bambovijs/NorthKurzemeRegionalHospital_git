@@ -4,8 +4,8 @@ public class Doctor extends Person {
     private final short OfficeNum;
     private final String Speciality;
 
-    public Doctor(String name, String surename, short age, int id, short OfficeNum, String Speciality) {
-        super(name, surename, age, id);
+    public Doctor(String name, String surname, short age, int id, short OfficeNum, String Speciality) {
+        super(name, surname, age, id);
         this.OfficeNum = OfficeNum;
         this.Speciality = Speciality;
     }

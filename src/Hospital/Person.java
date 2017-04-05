@@ -17,7 +17,7 @@ public class Person {
         return name;
     }
 
-    public String getSurename() {
+    public String getSurname() {
         return surname;
     }
 
