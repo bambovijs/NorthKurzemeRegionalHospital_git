@@ -7,7 +7,7 @@ public class Appointment {
     private String Date;
     private String Description;
     
-    private final ArrayList<Doctor> Doctors;
+    private ArrayList<Doctor> Doctors;
 
     public Appointment(int AppointmentID, String Date, ArrayList<Doctor> Doctors, String Description) {
         this.AppointmentID = AppointmentID;
@@ -41,14 +41,18 @@ public class Appointment {
         //Print Involved Doctors
     }
     
-//    public void addNewDoctor(Doctor){
-//        //TO DO
-//        // add New Doctor
-//    }
-//    
-//    public void removeExistingDoctor(int){
-//        //TO DO
-//        // remove Existing Doctor
-//    }
+    public void addNewDoctor(Doctor newDoctor){
+        // add New Doctor
+        Doctors.add(newDoctor);
+    }
+    
+    public void removeExistingDoctor(short id){
+        //Removes existing doctor from the doctors list
+        for(int i = 0; i < Doctors.size(); i++){
+            if (id == Doctors.get(i).getId()){
+                Doctors.remove(i);
+            }
+        }
+    }
     
 }

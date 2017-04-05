@@ -7,14 +7,19 @@ public class Patient extends Person{
     ArrayList<Appointment> Appointments;
     
     //added default constructor
+    public Patient(){
+        super("N", "N", (short)0, 0);
+    }
+    
+    
     public Patient(String name, String surname, short age, int id){
         super(name, surname, age, id);
         Appointments = new ArrayList<Appointment>();
     }
     
-    public Patient(String name, String surname, short age, int id, ArrayList<Appointment> list) {
+    public Patient(String name, String surname, short age, int id, ArrayList<Appointment> Appointment) {
         super(name, surname, age, id);
-        this.Appointments = list;
+        this.Appointments = Appointment;
     }
     
     public void printAllAppointments(){
@@ -27,14 +32,18 @@ public class Patient extends Person{
     }
     
     public void subscribeNewAppointment(Appointment newAppointment){
-        //TO DO
-        //Adds new appointment into the list
+        //TO DO 
+        //parbaudes ?!
         Appointments.add(newAppointment);
     }
     
     public void deleteExistingAppointment(int AppointmentID){
-        //TO DO
         //Delete Existing Appointment from list
+        for(int i = 0; i < Appointments.size(); i++){
+            if (AppointmentID == Appointments.get(i).getAppointmentID()){
+                Appointments.remove(i);
+            }
+        }
     }
     
     public ArrayList<Appointment> getAppointmentList(){

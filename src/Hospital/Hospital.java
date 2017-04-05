@@ -4,68 +4,68 @@ import java.util.ArrayList;
 
 public class Hospital {
 
-    ArrayList<Patient> Patients;
-    ArrayList<Doctor> Doctors;
+    static ArrayList<Patient> Patients = new ArrayList<>();
+    static ArrayList<Doctor> Doctors = new ArrayList<>();
     
-    public void printAllPatients(ArrayList<Patient> Patient){
+    public static void printAllPatients(ArrayList<Patient> Patients){
         //TODO parbaudes vai vispar kkas ir saraksta
-        for(int i = 0; i < Patient.size(); i++){
+        for(int i = 0; i < Patients.size(); i++){
             System.out.println("PATIENTS: " 
-                               + "\n Patient ID: " + Patient.get(i).getId()
-                               + "\n Patient Name: " + Patient.get(i).getName()
-                               + "\n Patient Surename: " + Patient.get(i).getSurname()
-                               + "\n Patient Age: " + Patient.get(i).getAge()
+                               + "\n Patient ID: " + Patients.get(i).getId()
+                               + "\n Patient Name: " + Patients.get(i).getName()
+                               + "\n Patient Surename: " + Patients.get(i).getSurname()
+                               + "\n Patient Age: " + Patients.get(i).getAge()
             );
         }
     }
     
-    public void addNewPatient(Patient newPatient){
+    public static void addNewPatient(Patient newPatient){
         //TODO parbaudes
-        
+        Patients.add(newPatient);
     }
     
-    public boolean deleteExistingPatientByID(int id){
+    public static boolean deleteExistingPatientByID(int id){
         //TODO parbaudes
         return true;
     }
     
-    public boolean deleteExistingPatientByObject(Patient Patient){
+    public static boolean deleteExistingPatientByObject(Patient Patient){
         return true;
     }
     
-    public void printAllPatientsForDate(String Date){
+    public static void printAllPatientsForDate(String Date){
         
     }
     
-    public void printAllAppointmentsForPatient(int PatientID){
+    public static void printAllAppointmentsForPatient(int PatientID){
         
     }
     
-    public void makeNewAppointment(int PatientID, int AppointmentID, String Date, ArrayList<Doctor> Doctors){
+    public static void makeNewAppointment(int PatientID, int AppointmentID, String Date, ArrayList<Doctor> Doctors){
         
     }
     
-    public void deleteAppointment(int PatientID, int AppointmentID){
+    public static void deleteAppointment(int PatientID, int AppointmentID){
         
     }
     
-//    public void printAllDoctors(ArrayList<Doctor>){
+//    public static void printAllDoctors(ArrayList<Doctor>){
 //        
 //    }
     
-    public void addNewDoctor(Doctor newDoctor){
-        
+    public static void addNewDoctor(Doctor newDoctor){
+        Doctors.add(newDoctor);
     }
     
-    public boolean deleteExistingDoctorByID(int DoctorID){
+    public static boolean deleteExistingDoctorByID(int DoctorID){
         return true;
     }
     
-    public boolean deleteExistingDoctorByObject(Doctor DoctorObj) {
+    public static boolean deleteExistingDoctorByObject(Doctor DoctorObj) {
         return true;
     }
     
-    public void generateAndSaveDoctors(){
+    public static void generateAndSaveDoctors(){
         
     }
     
@@ -78,13 +78,13 @@ public class Hospital {
 //    }
     
     public static void main(String[] args) {
-        Person p1;
-        p1 = new Person("Name", "Surename", (short)1, 1);
-        //p1 = new Doctor("Raivo", "Bambis", (short)1, 2, (short)3, "m");
-        Person pat1 = new Patient("Raivo", "Bambis", (short)1, 1);
+        Doctor doc1 = new Doctor("Raivo", "Bambis", (short)22, 001, (short)456, "Dentist"); // doctor
+        Person p1 = new Person("Matiss", "Malnieks", (short)25, 002); //person
+        Patient pat1 = new Patient("Enija", "Griga", (short)22, 003); //patient
         
-        System.out.println(p1.getName() + " " + p1.getSurname() + " " + p1.getAge() + " " + p1.getId() );
-        System.out.println(pat1.getName() + " " + pat1.getSurname() + " " + pat1.getAge() + " " + pat1.getId() );
+        addNewPatient(pat1);
+        printAllPatients(Patients);
+        printAllAppointmentsForPatient(3);
     }
     
 }
