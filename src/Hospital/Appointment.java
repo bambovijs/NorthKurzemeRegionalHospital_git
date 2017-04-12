@@ -42,7 +42,6 @@ public class Appointment {
     }
     
     public void addNewDoctor(Doctor newDoctor){
-        // add New Doctor
         Doctors.add(newDoctor);
     }
     

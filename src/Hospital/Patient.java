@@ -25,7 +25,7 @@ public class Patient extends Person{
     public void printAllAppointments(){
         //Prints all appointments
         for(int i = 0; i < Appointments.size(); i++){
-            System.out.println("APPOINTMENTS: \n Appointment ID: " + Appointments.get(i).getAppointmentID()
+            System.out.println("APPOINTMENT: \n Appointment ID: " + Appointments.get(i).getAppointmentID()
                                            + "\n Appointment Date: " + Appointments.get(i).getDate()
                                            + "\n Appointment Description: " + Appointments.get(i).getDescription() );
         }
