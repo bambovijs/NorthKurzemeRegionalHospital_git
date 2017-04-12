@@ -56,19 +56,43 @@ public class Hospital {
     }
     
     public static void printAllPatientsForDate(String Date){
-        
+        //TODO parbaudes
+        for(int i = 0; i < Patients.size(); i++){
+            if(Patients.get(i).Appointments.get(i).getDate().equals(Date)){
+                System.out.println("Date: " + Date 
+                                   + "\nPATIENT: "
+                                   + "\n Name: " + Patients.get(i).getName()
+                                   + "\n Surname: " + Patients.get(i).getName() );
+            }
+        }
     }
     
     public static void printAllAppointmentsForPatient(int PatientID){
-        
+        for(int i = 0; i < Patients.size(); i++){
+            if(Patients.get(i).getId() == PatientID){
+                for(int j = 0; j < Patients.get(j).Appointments.size(); j++){
+                    System.out.println("All Appointments for: " + Patients.get(j).getName()
+                                       + "\n APPOINTMENTS: " + Patients.get(j).Appointments.toString()
+                    );
+                }
+            }
+        }
     }
     
     public static void makeNewAppointment(int PatientID, int AppointmentID, String Date, ArrayList<Doctor> Doctors){
-        
+        for(int i = 0; i < Patients.size(); i++){
+            if(Patients.get(i).getId() == PatientID){
+                //nezinu ka pievienot
+            }
+        }
     }
     
     public static void deleteAppointment(int PatientID, int AppointmentID){
-        
+        for(int i = 0; i < Patients.size(); i++){
+            if(Patients.get(i).getId() == PatientID && Patients.get(i).Appointments.get(i).getAppointmentID() == AppointmentID ){
+                Patients.get(i).Appointments.remove(AppointmentID);
+            }
+        }
     }
     
     public static void printAllDoctors(ArrayList<Doctor> Doctors){
@@ -96,14 +120,18 @@ public class Hospital {
     }
     
     public static boolean deleteExistingDoctorByObject(Doctor DoctorObj) {
-        // ka lai atrod DoctorObj Doctor lista
-        Doctors.remove(DoctorObj);
-        return true;
+        for(int i = 0; i < Doctors.size(); i++){
+            if(Doctors.get(i).getId() == DoctorObj.getId()){
+                Doctors.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
     
-    public static void generateAndSaveDoctors(){
-        
-    }
+//    public static void generateAndSaveDoctors(){
+//        
+//    }
     
 //    public ArrayList<Doctor> uploadDoctorList(){
 //        
@@ -119,7 +147,7 @@ public class Hospital {
         Patient pat1 = new Patient("Enija", "Griga", (short)22, 003); //patient
         Patient pat2 = new Patient("Reinis", "Bambis", (short)25, 004); // patient
         
-        addNewPatient(p1);
+        addNewPatient(pat1);
         addNewPatient(pat2);
         addNewDoctor(doc1);
         printAllPatients(Patients);
