@@ -119,7 +119,7 @@ public class Hospital {
         Patient pat1 = new Patient("Enija", "Griga", (short)22, 003); //patient
         Patient pat2 = new Patient("Reinis", "Bambis", (short)25, 004); // patient
         
-        addNewPatient(pat1);
+        addNewPatient(p1);
         addNewPatient(pat2);
         addNewDoctor(doc1);
         printAllPatients(Patients);
