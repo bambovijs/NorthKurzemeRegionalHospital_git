@@ -82,7 +82,7 @@ public class Hospital {
     public static void makeNewAppointment(int PatientID, int AppointmentID, String Date, ArrayList<Doctor> Doctors){
         for(int i = 0; i < Patients.size(); i++){
             if(Patients.get(i).getId() == PatientID){
-                //nezinu ka pievienot
+                Patients.get(PatientID).getAppointmentList()
             }
         }
     }
@@ -143,17 +143,21 @@ public class Hospital {
     
     public static void main(String[] args) {
         Doctor doc1 = new Doctor("Raivo", "Bambis", (short)22, 001, (short)456, "Dentist"); // doctor
-        Person p1 = new Person("Matiss", "Malnieks", (short)25, 002); //person
-        Patient pat1 = new Patient("Enija", "Griga", (short)22, 003); //patient
-        Patient pat2 = new Patient("Reinis", "Bambis", (short)25, 004); // patient
+        Patient pat1 = new Patient("Vards", "Uzvards", (short)23, 2);
+        Appointment app1 = new Appointment(01, "01/01/2017", Doctors, "Kaut kas");
+        Appointment app2 = new Appointment(02, "02/02/2017", Doctors, "Kaut kas nr2");
         
-        addNewPatient(pat1);
-        addNewPatient(pat2);
+        
+        
         addNewDoctor(doc1);
-        printAllPatients(Patients);
+        addNewPatient(pat1);
+        app1.addNewDoctor(doc1);
+        pat1.Appointments.add(app1);
+        pat1.Appointments.add(app2);
+        
         printAllDoctors(Doctors);
-        
-        
+        printAllPatients(Patients);
+        printAllAppointmentsForPatient(2);
     }
     
 }

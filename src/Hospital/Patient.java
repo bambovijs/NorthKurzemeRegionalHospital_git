@@ -34,7 +34,7 @@ public class Patient extends Person{
     public void subscribeNewAppointment(Appointment newAppointment){
         //TO DO 
         //parbaudes ?!
-        Appointments.add(newAppointment);
+//        Appointments.add(newAppointment);
     }
     
     public void deleteExistingAppointment(int AppointmentID){
